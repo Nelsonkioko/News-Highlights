@@ -7,7 +7,7 @@ class Config:
 
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
 
-    SECRET_KEY = os.environ.get('SECRET_KEY') 
+    SECRET_KEY = os.environ.get('SECRET_KEY')  
 
 
 
