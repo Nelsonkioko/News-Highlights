@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <br>
   <hr>
-  <h2 style="font-family:verdana";>TOP HEADLINES TODAY</h2>
+  <h2 style="font-family:verdana";>Trending News</h2>
   <hr>
   <br>
   {% block styles%}
@@ -24,7 +24,7 @@
     <br>
     <p ><b> ~{{ item.description}}</b></p>
     <br>
-    <p><a href="{{item.url}}" target="_blank"><button type="button" class="btn btn-outline-dark">Read Article</button></a></p>
+    <p><a href="{{item.url}}" target="_blank"><button type="button" class="btn btn-outline-dark">View Article</button></a></p>
 
   </div>
   {% endfor %}
