@@ -10,7 +10,7 @@ This is a Python app made with the flask framework that allows users to view new
 
 This is an app that connectss users to news articles
 
-## Technologies Used
+## Technologies Used 
 
 Python 3.6
 
