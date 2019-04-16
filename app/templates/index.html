@@ -2,33 +2,38 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div class="container-fluid">
-  <br>
-  <hr>
-  <h2 style="font-family:verdana";>Trending News</h2>
-  <hr>
-  <br>
-  {% block styles%}
-      {{ super() }}
-      <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
-  {% endblock%}
-  {% for item in article %}
-  <div class="col-md-4">
-    <h2 style="color:blue;">{{ item.source.name }}</h2>
-    <br>
-    <h3 >{{ item.title}}</h3>
-    <br>
-    <p><em>Article by {{ item.author}}</em></p>
-    <p><em>Published on {{ item.publishedAt}}</em></p>
-    <img src="{{ item.urlToImage }}" alt="{{ item.title }} urlToImage" class="img-responsive" height="auto" width="auto">
-    <br>
-    <p ><b> ~{{ item.description}}</b></p>
-    <br>
-    <p><a href="{{item.url}}" target="_blank"><button type="button" class="btn btn-outline-dark">View Article</button></a></p>
-
-  </div>
-  {% endfor %}
+<div class="back">
+    <div class="container-fluid">
+        <br>
+        <hr>
+        <h2 style="font-family:verdana";>Trending News</h2>
+        <hr>
+        <br>
+        {% block styles%}
+            {{ super() }}
+            <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+        {% endblock%}
+        {% for item in article %}
+        
+        <div class="col-md-4">
+          <h2 style="color:olive;">{{ item.source.name }}</h2>
+          <br>
+          <h3 >{{ item.title}}</h3>
+          <br>
+          <p><em>Article by {{ item.author}}</em></p>
+          <p><em>Published on {{ item.publishedAt}}</em></p>
+          <img src="{{ item.urlToImage }}" alt="{{ item.title }} urlToImage" class="img-responsive" height="auto" width="auto">
+          <br>
+          <p ><b> ~{{ item.description}}</b></p>
+          <br>
+          <p><a href="{{item.url}}" target="_blank"><button type="button" class="btn btn-outline-dark">View Article</button></a></p>
+      
+        </div>
+        {% endfor %}
+      
+      </div>
 
 </div>
+
 
 {%endblock%}
