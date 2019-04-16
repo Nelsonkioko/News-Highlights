@@ -14,7 +14,7 @@ This is an app that connectss users to news articles
 
 Python 3.6
 
-## Application requirements
+## Application requirements 
 
 1. Ensure you have Python3.6 installed in your computer. you can download it by running this command
 
