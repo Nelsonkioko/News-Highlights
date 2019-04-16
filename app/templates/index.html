@@ -1,52 +1,34 @@
+
 {% extends 'base.html'%}
-{% import 'macros.html' as macro%}
 
-<!-- Styles block -->
+{% block content %}
+<div class="container-fluid">
+  <br>
+  <hr>
+  <h2 style="font-family:verdana";>TOP HEADLINES TODAY</h2>
+  <hr>
+  <br>
+  {% block styles%}
+      {{ super() }}
+      <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+  {% endblock%}
+  {% for item in article %}
+  <div class="col-md-4">
+    <h2 style="color:blue;">{{ item.source.name }}</h2>
+    <br>
+    <h3 >{{ item.title}}</h3>
+    <br>
+    <p><em>Article by {{ item.author}}</em></p>
+    <p><em>Published on {{ item.publishedAt}}</em></p>
+    <img src="{{ item.urlToImage }}" alt="{{ item.title }} urlToImage" class="img-responsive" height="auto" width="auto">
+    <br>
+    <p ><b> ~{{ item.description}}</b></p>
+    <br>
+    <p><a href="{{item.url}}" target="_blank"><button type="button" class="btn btn-outline-dark">Read Article</button></a></p>
 
-{% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock %}
-<!-- Content block -->
+  </div>
+  {% endfor %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best Movie Review website </title>
-        {% endif %}
-    </head>
-    <body>
+</div>
 
-       <!-- Content block -->
-       {% block content %}
-
- <div class="container">
-     <form>
-         <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
-         <input type="submit"  value="Submit" class="btn btn-default">
-     </form>
-
- </div>
-       <!-- Popular movie -->
-       <h3> Popular Movies</h3>
-       <ul>
-           {{ macro.displayMovieList(popular)}}
-       </ul>
-       <!-- Upcoming movie  -->
-       <h3> Upcoming Movies </h3>
-       <ul>
-           {{ macro.displayMovieList(upcoming)}}
-       </ul>
-       <!-- Now showing movie -->
-       <h3>Now Showing</h3>
-       <ul>
-           {{ macro.displayMovieList(now_showing)}}
-       </ul>
-
-       {% endblock%}
-   </body>
-</html>
+{%endblock%}

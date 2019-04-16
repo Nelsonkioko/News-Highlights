@@ -1,23 +1,13 @@
-{% macro displayMovieList(movie_list) %}
+{% macro displayNewsList(news_list) %}
 
-    {% for movie in movie_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-            <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-responsive">
-            <li class="text-center">
-                <a href="/movie/{{movie.id}}">
-                    {{ movie.title|truncate(10)}}</a>
-            </li>
-        </div>
+{% for news in news_list %}
+<div class="container-fluid">
+  <p><a href="{{news.url}}" target="_blank">
+      <h1>{{ news.name}}</h1>
+    </a></p>
+  <p>{{news.description}}</p>
 
+</div>
 {% endfor %}
 
-{% endmacro %}
-<!-- Displaying reviews macro -->
-{% macro displayReviews(review_list) %}
-    {% for review in review_list %}
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-        <h2> {{ review.title}} </h2>
-        <p> {{ review.review | truncate(30) }}</p>
-    </div>
-    {% endfor %}
 {% endmacro %}
