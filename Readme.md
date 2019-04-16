@@ -58,7 +58,7 @@ or just use this
 | User clicks on sources items in the nav-bar | all news sources available displayed|
 | User clicks on the link on the sources page | url page loads|
 | User clicls on the other items on the navbar| specific page displayed| 
-
+ 
 
 
 ## Live link
