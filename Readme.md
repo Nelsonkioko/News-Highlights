@@ -2,7 +2,7 @@
 
 This is a Python app made with the flask framework that allows users to view news from various news sources.
 
-## Author name
+## Author name 
 
 [Nelson Kioko]
 
